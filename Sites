@@ -1,0 +1,22 @@
+# Input parameters
+site = input("Enter the site name: ")
+soil_type = input("Enter the type of soil: ")
+gw_level = float(input("Enter the groundwater level in ft: "))
+
+# Methods
+if soil_type == "sand":
+    if gw_level <= 5:
+        print(f"For {site}, use wellpoints with vacuum or ejector pumps.")
+    elif gw_level > 5 and gw_level <= 20:
+        print(f"For {site}, use deepwell dewatering.")
+    else:
+        print(f"For {site}, use vertical sand drains with cutoff walls.")
+elif soil_type == "clay":
+    if gw_level <= 10:
+        print(f"For {site}, use wellpoints with vacuum or ejector pumps.")
+    elif gw_level > 10 and gw_level <= 20:
+        print(f"For {site}, use electroosmosis or pressure relief wells.")
+    else:
+        print(f"For {site}, use cutoff walls with sump pumps or gravity drains.")
+else:
+    print(f"For {site}, consult a geotechnical engineer for appropriate dewatering method.")
